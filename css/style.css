@@ -3210,7 +3210,190 @@ input[type=number] {
 
 /*	16) AALI MEDIA QUERIES (FOR SMALL DEVICES)
 /*---------------------------------------------------*/
-
+@media (min-width: 1401px) {
+    body {
+        font-size: 18px; /* Increase font size for larger screens */
+    }
+    .progress_inner {
+        margin-bottom: 10px;
+    }
+    .label {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+    .slogos {
+        display: block;
+        text-align: center;
+        margin-left: 0; /* Adjust margin for larger screens */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        float: none;
+    }
+    .container {
+        max-width: 1440px; /* Increase max width for larger screens */
+    }
+    .aali_tm_header .logo img {
+        max-width: 100px; /* Larger logo for bigger screens */
+    }
+    .aali_tm_header .menu ul li {
+        margin-right: 40px; /* Increase space between menu items */
+    }
+    .aali_tm_header .inner {
+        padding: 30px 0px; /* Adjust header padding */
+    }
+    .aali_tm_hero .content .hello {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .aali_tm_hero .content .name {
+        font-size: 100px; /* Larger font for hero section */
+    }
+    .aali_tm_hero .cd-headline {
+        font-size: 30px;
+    }
+    .aali_tm_hero .cd-headline b {
+        font-size: 45px;
+    }
+    .aali_tm_button a {
+        padding: 12px 70px 11px 40px;
+    }
+    .aali_tm_hero .simple_button {
+        margin-left: 40px;
+    }
+    .aali_tm_hero .hero_buttons {
+        margin-top: 35px;
+        margin-bottom: 55px;
+    }
+    .aali_tm_button a .svg {
+        width: 20px;
+        height: 20px;
+    }
+    .aali_tm_hero .socials {
+        left: 40px;
+    }
+    .aali_tm_hero .socials ul .svg {
+        width: 20px;
+        height: 20px;
+    }
+    .aali_tm_hero .socials ul li {
+        margin-bottom: 15px;
+    }
+    .aali_tm_hero .hero_mail {
+        left: 40px;
+        bottom: 30px;
+    }
+    .aali_tm_hero .hero_mail a {
+        font-size: 20px;
+    }
+    .aali_tm_hero .avatar {
+        width: 40%; /* Increase avatar size */
+    }
+    .aali_tm_hero .avatar .two {
+        width: 200px;
+        height: 200px;
+        bottom: 80px;
+    }
+    .aali_tm_hero .avatar .three {
+        width: 70px;
+        height: 100px;
+        top: 180px;
+        left: -100px;
+    }
+    .aali_tm_hero .avatar .one {
+        width: 300px;
+        top: 120px;
+        bottom: 120px;
+    }
+    .aali_tm_hero .avatar .four {
+        width: 350px;
+        height: 350px;
+    }
+    .aali_tm_hero .five {
+        width: 45px;
+        height: 60px;
+        right: -160px;
+    }
+    .aali_tm_hero .stroke_text {
+        font-size: 250px;
+        right: -150px;
+        margin-top: -60px;
+    }
+    .aali_tm_about .center .small {
+        font-size: 20px;
+    }
+    .aali_tm_about .center h3 {
+        font-size: 50px;
+    }
+    .aali_tm_about .center .subtitle {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+    .aali_tm_about .text p {
+        margin-bottom: 30px;
+    }
+    .aali_tm_about .center .title {
+        margin-bottom: 30px;
+    }
+    .aali_tm_about .border {
+        height: 250px;
+        margin-right: -40px;
+    }
+    .aali_tm_about .square {
+        width: 250px;
+        height: 250px;
+    }
+    .aali_tm_about .left .image {
+        margin-left: 150px;
+    }
+    .aali_tm_about .right .square {
+        height: 300px;
+        margin-left: -100px;
+        top: -80px;
+    }
+    .aali_tm_about .right {
+        top: 300px;
+    }
+    .aali_tm_about .center {
+        padding: 0px 80px 0px 100px;
+    }
+    .aali_tm_main_title {
+        max-width: 600px;
+    }
+    .aali_tm_main_title span {
+        font-size: 20px;
+    }
+    .aali_tm_main_title h3 {
+        font-size: 50px;
+    }
+    .progress_inner>span {
+        font-size: 22px;
+    }
+    .aali_tm_service .service_list .title h3 {
+        font-size: 30px;
+    }
+    .aali_tm_service .service_list .price {
+        font-size: 18px;
+    }
+    .aali_tm_resume .main_title {
+        font-size: 30px;
+    }
+    .aali_tm_testimonials ul li .text p {
+        font-size: 25px;
+    }
+    .aali_tm_testimonials ul li .text {
+        font-size: 35px;
+    }
+    .aali_tm_news .news_list ul li .details .title a {
+        font-size: 30px;
+    }
+    .aali_tm_news .news_list ul li .details .title {
+        margin-bottom: 12px;
+    }
+    .aali_tm_counter .counter_list .value span {
+        font-size: 70px;
+    }
+}
 @media (max-width: 1400px) {
     body {
         font-size: 16px;

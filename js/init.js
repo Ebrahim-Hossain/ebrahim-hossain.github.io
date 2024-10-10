@@ -302,46 +302,46 @@ jQuery('.dodo_progress').each(function() {
 // ---------------   PRELOADER   -----------------------
 // -----------------------------------------------------
 
-// function aali_tm_preloader() {
-//     "use strict";
+function aali_tm_preloader() {
+    "use strict";
 
-//     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-//     var preloader = $('#preloader');
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+    var preloader = $('#preloader');
     
-//     console.log("Preloader function triggered");
+    console.log("Preloader function triggered");
 
-//     if (!isMobile) {
-//         console.log("Not a mobile device, starting preloader timeout");
-//         setTimeout(function() {
-//             preloader.addClass('preloaded');
-//             console.log("Preloader class added");
-//         }, 800);
+    if (!isMobile) {
+        console.log("Not a mobile device, starting preloader timeout");
+        setTimeout(function() {
+            preloader.addClass('preloaded');
+            console.log("Preloader class added");
+        }, 800);
 
-//         setTimeout(function() {
-//             preloader.remove();
-//             console.log("Preloader removed from DOM");
-//         }, 2000);
+        setTimeout(function() {
+            preloader.remove();
+            console.log("Preloader removed from DOM");
+        }, 2000);
 
-//     } else {
-//         console.log("Mobile device detected, removing preloader immediately");
-//         preloader.remove();
-//     }
-// }
+    } else {
+        console.log("Mobile device detected, removing preloader immediately");
+        preloader.remove();
+    }
+}
 
 
 // -----------------------------------------------------
 // -----------------   MY LOAD    ----------------------
 // -----------------------------------------------------
 
-// function aali_tm_my_load() {
+function aali_tm_my_load() {
 
-//     "use strict";
+    "use strict";
 
-//     var speed = 500;
-//     setTimeout(function() {
-//         aali_tm_preloader();
-//     }, speed);
-// }
+    var speed = 500;
+    setTimeout(function() {
+        aali_tm_preloader();
+    }, speed);
+}
 
 // -----------------------------------------------------
 // ------------------   CURSOR    ----------------------

@@ -3720,6 +3720,13 @@ input[type=number] {
 }
 
 @media (max-width: 1040px) {
+
+    .mouse-cursor, 
+    .cursor-inner, 
+    .cursor-outer {
+        display: none !important; /* Completely hide custom cursor and hover */
+    }
+
     .container {
         padding: 0px 20px;
     }
@@ -3887,6 +3894,13 @@ input[type=number] {
 }
 
 @media (max-width: 768px) {
+    
+    .mouse-cursor, 
+    .cursor-inner, 
+    .cursor-outer {
+        display: none !important; /* Completely hide custom cursor and hover */
+    }
+
     .aali_tm_hero .content .name {
         font-size: 60px;
     }

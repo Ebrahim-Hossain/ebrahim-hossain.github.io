@@ -46,6 +46,29 @@ body {
     background-color: #f4f5fe;
     color: #7d7789;
 }
+ul li a {
+    text-decoration: none; /* Remove default underline */
+    padding-bottom: 5px; /* Adds space for the border */
+    position: relative; /* Needed for the pseudo-element */
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5px; /* Adjust the thickness of the bottom border */
+    background-color: #ffffff; /* Adjust the color of the bottom border */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+ul li a.current::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 .padding_ebr {
     padding-bottom: 0px;
 }

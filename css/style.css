@@ -46,6 +46,118 @@ body {
     background-color: #f4f5fe;
     color: #7d7789;
 }
+/* Preloader container */
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+ /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* Hide the preloader when content is loaded */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Line element that will blow the screen */
+.blow-line {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center the line horizontally */
+    width: 5px;
+    height: 100%;
+    background-color: #4169e1; /* Royal Blue color */
+    box-shadow: 0px 0px 15px rgba(65, 105, 225, 0.8); /* Glowing effect */
+    animation: blowLine 2s ease-out forwards; /* Move the line and blow the screen away */
+}
+
+/* Keyframes for blowing the screen */
+@keyframes blowLine {
+    0% {
+        transform: translateY(-100%); /* Start off-screen from the top */
+    }
+    100% {
+        transform: translateY(100%); /* Move to below the screen */
+    }
+}
+
+/* Preloader blow away effect */
+#preloader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    animation: blowScreen 2s ease-out forwards; /* Blow the screen away with the line */
+}
+
+/* Keyframes for screen blow away */
+@keyframes blowScreen {
+    0% {
+        transform: translateY(0); /* Start in place */
+    }
+    100% {
+        transform: translateY(100%); /* Push screen off the bottom */
+    }
+}
+
+.padding_ebr {
+    padding-bottom: 0px;
+}
+.ebr_portfolio_name {
+    font-size: x-large;
+}
+/* Default styles for links */
+.portfolio_filter a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Use a pseudo-element to create the border */
+.portfolio_filter a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: transparent; /* Initially transparent */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for the border */
+    transform: scaleX(0); /* Start with no border (scale to 0) */
+    transform-origin: left; /* Origin to control direction */
+}
+
+/* When 'current' class is active, the border becomes visible */
+.portfolio_filter a.current::after {
+    background-color: #ffffff; /* Set the border color for current */
+    transform: scaleX(1); /* Scale the border to full width */
+}
+
+/* Optional: Change text color on current */
+.portfolio_filter a.current {
+    color: #ffffff; /* Text color for the current item */
+}
+
+/* Optional: Add hover effect to show border on hover */
+.portfolio_filter a:hover::after {
+    background-color: #ffffff; /* Same color on hover */
+    transform: scaleX(1); /* Scale to full width */
+}
+
 
 .devide {
     margin-top: 100px;
@@ -3398,6 +3510,12 @@ input[type=number] {
     }
 }
 @media (max-width: 1400px) {
+    .padding_ebr {
+        padding-bottom: 5px;
+    }
+    .ebr_portfolio_name {
+        font-size: large;
+    }
     body {
         font-size: 16px;
     }
@@ -3720,7 +3838,12 @@ input[type=number] {
 }
 
 @media (max-width: 1040px) {
-
+    .ebr_portfolio_name {
+        font-size: medium;
+    }
+    .padding_ebr {
+        padding-bottom: 20px;
+    }
     .mouse-cursor, 
     .cursor-inner, 
     .cursor-outer {
@@ -3941,7 +4064,7 @@ input[type=number] {
         font-size: 18px;
     }
     .aali_tm_portfolio .portfolio_filter {
-        text-align: left;
+        text-align: center;
     }
     .aali_tm_service .service_list .icon {
         display: inline-block;

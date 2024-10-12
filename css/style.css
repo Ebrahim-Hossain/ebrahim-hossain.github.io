@@ -46,71 +46,6 @@ body {
     background-color: #f4f5fe;
     color: #7d7789;
 }
-/* Preloader container */
-#preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
- /* Dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-}
-
-/* Hide the preloader when content is loaded */
-body.loaded #preloader {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Line element that will blow the screen */
-.blow-line {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Center the line horizontally */
-    width: 5px;
-    height: 100%;
-    background-color: #4169e1; /* Royal Blue color */
-    box-shadow: 0px 0px 15px rgba(65, 105, 225, 0.8); /* Glowing effect */
-    animation: blowLine 2s ease-out forwards; /* Move the line and blow the screen away */
-}
-
-/* Keyframes for blowing the screen */
-@keyframes blowLine {
-    0% {
-        transform: translateY(-100%); /* Start off-screen from the top */
-    }
-    100% {
-        transform: translateY(100%); /* Move to below the screen */
-    }
-}
-
-/* Preloader blow away effect */
-#preloader::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1a1a1a;
-    animation: blowScreen 2s ease-out forwards; /* Blow the screen away with the line */
-}
-
-/* Keyframes for screen blow away */
-@keyframes blowScreen {
-    0% {
-        transform: translateY(0); /* Start in place */
-    }
-    100% {
-        transform: translateY(100%); /* Push screen off the bottom */
-    }
-}
 
 .padding_ebr {
     padding-bottom: 0px;
@@ -3325,6 +3260,101 @@ input[type=number] {
 
 /*	16) AALI MEDIA QUERIES (FOR SMALL DEVICES)
 /*---------------------------------------------------*/
+/* preloader */
+@media (min-width: 1024px) {
+    #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    /* Dark background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    }
+
+    /* Hide the preloader when content is loaded */
+    body.loaded #preloader {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Line element with stylish effects */
+    .blow-line {
+        position: absolute;
+        top: 0;
+        left: 50%; /* Center the line horizontally */
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(180deg, #4169e1, #2980b9); /* Gradient effect */
+        border-radius: 50%; /* Rounded line for smoothness */
+        box-shadow: 0px 0px 25px rgba(65, 105, 225, 0.8); /* Glowing effect */
+        animation: blowScreen 2.5s ease-in-out forwards, pulseGlow 1s ease-in-out infinite; /* Move the line and add glow */
+    }
+
+    /* Keyframes for blowing the screen */
+    @keyframes blowScreen {
+        0% {
+            transform: translateY(-100%) scaleX(0.5); /* Start off-screen and slightly narrow */
+            opacity: 0.5;
+        }
+        50% {
+            transform: translateY(50%) scaleX(1); /* Midway, expand the line */
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100%) scaleX(0.5); /* End off-screen with narrowing */
+            opacity: 0;
+        }
+    }
+
+    /* Keyframes for glowing pulse effect */
+    @keyframes pulseGlow {
+        0% {
+            box-shadow: 0px 0px 10px rgba(65, 105, 225, 0.3); /* Low glow */
+        }
+        50% {
+            box-shadow: 0px 0px 30px rgba(65, 105, 225, 1); /* High glow during pulse */
+        }
+        100% {
+            box-shadow: 0px 0px 10px rgba(65, 105, 225, 0.3); /* Return to low glow */
+        }
+    }
+
+    /* Preloader blow away effect */
+    #preloader::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1a1a1a;
+        animation: preloaderBlowAway 2.5s ease-in-out forwards;
+    }
+
+    /* Keyframes for screen blow away */
+    @keyframes preloaderBlowAway {
+        0% {
+            transform: translateY(0) scaleY(1); /* Start full screen */
+        }
+        100% {
+            transform: translateY(100%) scaleY(0.5); /* Shrink down while being pushed off the screen */
+        }
+    }
+}
+
+/* Disable preloader for screens smaller than 1024px */
+@media (max-width: 1023px) {
+    #preloader {
+        display: none; /* Hide preloader on mobile and smaller screens */
+    }
+}
+
 @media (min-width: 1401px) {
     body {
         font-size: 18px; /* Increase font size for larger screens */
@@ -3838,6 +3868,27 @@ input[type=number] {
 }
 
 @media (max-width: 1040px) {
+    /* Preloader container */
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+/* Fade out the preloader when content is loaded */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.5s ease-out;
+}
     .ebr_portfolio_name {
         font-size: medium;
     }

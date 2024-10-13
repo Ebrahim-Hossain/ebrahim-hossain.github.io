@@ -46,6 +46,9 @@ body {
     background-color: #f4f5fe;
     color: #7d7789;
 }
+.email_font {
+    font-size: 22px;
+}
 ul li a {
     text-decoration: none; /* Remove default underline */
     padding-bottom: 5px; /* Adds space for the border */
@@ -3277,7 +3280,7 @@ input[type=number] {
         margin-bottom: 15px;
     }
     .aali_tm_hero .content .name {
-        font-size: 100px; /* Larger font for hero section */
+        font-size: 130px; /* Larger font for hero section */
     }
     .aali_tm_hero .cd-headline {
         font-size: 30px;

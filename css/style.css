@@ -46,9 +46,6 @@ body {
     background-color: #f4f5fe;
     color: #7d7789;
 }
-.email_font {
-    font-size: 22px;
-}
 ul li a {
     text-decoration: none; /* Remove default underline */
     padding-bottom: 5px; /* Adds space for the border */
